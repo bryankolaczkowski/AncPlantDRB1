@@ -9,8 +9,8 @@ the manuscript.
 
 asr/ subdirectory contains information relevant to ancestral sequence
 reconstruction, phylogenetic analyses, structural modeling and
-in vitro kinetics experiments, including primary data, analysis
-scripts and results.
+in vitro kinetics experiments, including primary data, alignments,
+phylogenies, ancestral sequences, analysis scripts and results.
 
 rnaseq/ subdirectory contains information relevant to the small
 RNAseq analysis, including NCBI BioProject accessions for accessing
