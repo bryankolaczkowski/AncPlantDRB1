@@ -1,0 +1,50 @@
+
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> args = commandArgs(trailingOnly = TRUE)
+> fname = args[1]
+> 
+> data = read.table(fname)
+> 
+> rhs = function(V1,t,k){
++    ((t*V1)/(k+V1))
++ }
+> 
+> fit = nls(V2 ~ rhs(V1,t,k), data, start=list(t=1.0, k=0.000001), control=nls.control(maxiter=10000))
+> summary(fit)
+
+Formula: V2 ~ rhs(V1, t, k)
+
+Parameters:
+   Estimate Std. Error t value Pr(>|t|)
+t 1.865e+00  3.325e+00   0.561    0.599
+k 3.099e-05  6.939e-05   0.447    0.674
+
+Residual standard error: 0.07361 on 5 degrees of freedom
+
+Number of iterations to convergence: 13 
+Achieved convergence tolerance: 6.898e-06
+
+> 
+> coef(summary(fit))
+      Estimate   Std. Error   t value  Pr(>|t|)
+t 1.864875e+00 3.325205e+00 0.5608302 0.5991141
+k 3.098736e-05 6.938906e-05 0.4465741 0.6738601
+> 
+> 

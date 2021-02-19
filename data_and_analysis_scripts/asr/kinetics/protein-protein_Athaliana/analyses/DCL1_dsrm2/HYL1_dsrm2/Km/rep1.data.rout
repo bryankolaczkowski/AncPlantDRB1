@@ -1,0 +1,52 @@
+
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> args = commandArgs(trailingOnly = TRUE)
+> fname = args[1]
+> 
+> data = read.table(fname)
+> 
+> rhs = function(V1,t,k){
++    ((t*V1)/(k+V1))
++ }
+> 
+> fit = nls(V2 ~ rhs(V1,t,k), data, start=list(t=0.8, k=0.000001), control=nls.control(maxiter=1000))
+> summary(fit)
+
+Formula: V2 ~ rhs(V1, t, k)
+
+Parameters:
+   Estimate Std. Error t value Pr(>|t|)    
+t 1.059e+00  9.878e-02  10.721 0.000122 ***
+k 2.343e-06  6.647e-07   3.524 0.016847 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.06217 on 5 degrees of freedom
+
+Number of iterations to convergence: 7 
+Achieved convergence tolerance: 2.242e-06
+
+> 
+> coef(summary(fit))
+      Estimate   Std. Error   t value     Pr(>|t|)
+t 1.059059e+00 9.878002e-02 10.721393 0.0001222915
+k 2.342588e-06 6.647483e-07  3.524023 0.0168467003
+> 
+> 

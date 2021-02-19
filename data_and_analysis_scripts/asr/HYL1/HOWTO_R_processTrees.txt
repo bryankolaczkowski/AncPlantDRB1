@@ -1,0 +1,17 @@
+# start R. Then do: #
+
+library(ape)
+
+tips_to_keep <- read.table(file="DSRM1/unaligned.taxa")
+thet <- read.tree(file="consensus_tree.tre")
+tips_to_remove <- setdiff(thet$tip.label,tips_to_keep[["V1"]])
+newt <- drop.tip(thet, tips_to_remove)
+write.tree(newt, file="DSRM1/contree.tre")
+write(newt$tip.label,file="DSRM1/contree.taxa")
+
+tips_to_keep <- read.table(file="DSRM2/unaligned.taxa")
+thet <- read.tree(file="consensus_tree.tre")
+tips_to_remove <- setdiff(thet$tip.label,tips_to_keep[["V1"]])
+newt <- drop.tip(thet, tips_to_remove)
+write.tree(newt, file="DSRM2/contree.tre")
+write(newt$tip.label,file="DSRM2/contree.taxa")

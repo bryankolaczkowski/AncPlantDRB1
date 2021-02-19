@@ -1,0 +1,7 @@
+# Builds index for Salmon quantification
+
+module load salmon
+
+salmon index -t Araport11_genes_miRNAonly.fasta  -i At_miRNAonly_index --type quasi -k 5
+
+salmon index -t Araport11_genes_noPrimary_miRNA.fasta  -i At_noPrimary_index --type quasi -k 5

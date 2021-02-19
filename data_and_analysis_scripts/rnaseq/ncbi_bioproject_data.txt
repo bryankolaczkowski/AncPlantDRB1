@@ -1,0 +1,14 @@
+SubmissionID:       SUB7022346
+BioProject ID:      PRJNA608441
+
+Accession	Sample Name	SPUID	Organism	Tax ID	Cultivar	
+SAMN14172202	COLwt_1	COLwt_1	Arabidopsis thaliana	3702	COL1	
+SAMN14172203	COLwt_2	COLwt_2	Arabidopsis thaliana	3702	COL1	
+SAMN14172204	COLwt_3	COLwt_3	Arabidopsis thaliana	3702	COL1	
+SAMN14172205	HYL1mut_1	HYL1mut_1	Arabidopsis thaliana	3702	COL1	
+SAMN14172206	HYL1mut_2	HYL1mut_2	Arabidopsis thaliana	3702	COL1	
+SAMN14172207	HYL1mut_3	HYL1mut_3	Arabidopsis thaliana	3702	COL1	
+SAMN14172208	ANCHYL1res_1	ANCHYL1res_1	Arabidopsis thaliana	3702	COL1	
+SAMN14172209	ANCHYL1res_2	ANCHYL1res_2	Arabidopsis thaliana	3702	COL1	
+SAMN14172210	ANCHYL1res_3	ANCHYL1res_3	Arabidopsis thaliana	3702	COL1
+
